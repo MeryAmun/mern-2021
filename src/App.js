@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 
 import About from './components/About'
 import Contacts from './components/Contacts'
+import Dashboard from './components/Dashboard'
 import Footer from './components/Footer'
 import Home from './components/Home'
 import Login from './components/Login'
@@ -23,6 +24,7 @@ function App() {
         <Route exact path='/contact' element={<Contacts />} />
         <Route exact path='/login' element={<Login />} />
         <Route exact path='/register' element={<Register />} />
+        <Route exact path='/dashboard' element={<Dashboard />} />
       </Routes>
       <Footer />
     </>
