@@ -20,39 +20,42 @@ export default function Contacts() {
             </div>
             <div className='col-md-6'>
               <form action=''>
-                <div class='mb-3'>
-                  <label for='name' class='form-label'>
+                <div className='mb-3'>
+                  <label for='name' className='form-label'>
                     Your Name
                   </label>
                   <input
                     type='text'
-                    class='form-control'
+                    className='form-control'
                     id='name'
                     placeholder='Ngwa Suh'
                   />
                 </div>
-                <div class='mb-3'>
-                  <label for='exampleFormControlInput1' class='form-label'>
+                <div className='mb-3'>
+                  <label for='exampleFormControlInput1' className='form-label'>
                     Email address
                   </label>
                   <input
                     type='email'
-                    class='form-control'
+                    className='form-control'
                     id='exampleFormControlInput1'
                     placeholder=''
                   />
                 </div>
-                <div class='mb-3'>
-                  <label for='exampleFormControlTextarea1' class='form-label'>
+                <div className='mb-3'>
+                  <label
+                    for='exampleFormControlTextarea1'
+                    className='form-label'
+                  >
                     Your Message
                   </label>
                   <textarea
-                    class='form-control'
+                    className='form-control'
                     id='exampleFormControlTextarea1'
                     rows='5'
                   ></textarea>
                 </div>
-                <button className='btn btn-outline-primary'>
+                <button className='btn btn-outline-primary rounded-pill px-4'>
                   Send Message
                   <i className='fa fa-paper-plane ms-2'></i>
                 </button>

@@ -1,12 +1,13 @@
+import { NavLink } from 'react-router-dom'
 import React from 'react'
 
 export default function Navbar() {
   return (
     <div>
-      <nav class='navbar navbar-expand-lg navbar-light shadow'>
-        <div class='container'>
+      <nav className='navbar navbar-expand-lg navbar-light shadow'>
+        <div className='container'>
           <button
-            class='navbar-toggler'
+            className='navbar-toggler'
             type='button'
             data-bs-toggle='collapse'
             data-bs-target='#navbarSupportedContent'
@@ -14,34 +15,34 @@ export default function Navbar() {
             aria-expanded='false'
             aria-label='Toggle navigation'
           >
-            <span class='navbar-toggler-icon'></span>
+            <span className='navbar-toggler-icon'></span>
           </button>
-          <div class='collapse navbar-collapse' id='navbarSupportedContent'>
-            <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
-              <li class='nav-item'>
-                <a class='nav-link active' aria-current='page' href='#'>
+          <div className='collapse navbar-collapse' id='navbarSupportedContent'>
+            <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
+              <li className='nav-item'>
+                <NavLink to='/' className='nav-link active' aria-current='page'>
                   Home
-                </a>
+                </NavLink>
               </li>
-              <li class='nav-item'>
-                <a class='nav-link' href='#'>
+              <li className='nav-item'>
+                <NavLink to='/about' className='nav-link'>
                   About
-                </a>
+                </NavLink>
               </li>
-              <li class='nav-item'>
-                <a class='nav-link' href='#'>
+              <li className='nav-item'>
+                <NavLink to='/services' className='nav-link'>
                   Services
-                </a>
+                </NavLink>
               </li>
-              <li class='nav-item'>
-                <a class='nav-link' href='#'>
+              <li className='nav-item'>
+                <NavLink to='/contact' className='nav-link'>
                   Contact
-                </a>
+                </NavLink>
               </li>
             </ul>
-            <a class='navbar-brand fw-bolder fs-4 mx-auto' href='#'>
+            <NavLink to='/' className='navbar-brand fw-bolder fs-4 mx-auto'>
               Navbar
-            </a>
+            </NavLink>
             <button className='btn-outline-primary ms-auto px-4 rounded-pill'>
               <i className='fa fa-sign-in me-2'></i>
               Login

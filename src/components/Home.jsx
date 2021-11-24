@@ -1,4 +1,8 @@
+import About from './About'
+import Contacts from './Contacts'
+import { NavLink } from 'react-router-dom'
 import React from 'react'
+import Services from './Services'
 
 export default function Home() {
   return (
@@ -17,17 +21,26 @@ export default function Home() {
                 aliquid suscipit fugit quidem necessitatibus quae.
               </p>
               <div className='button d-flex justify-content-center'>
-                <button className='btn btn-light me-4 rounded-pill px-4 py-2'>
+                <NavLink
+                  to='/contact'
+                  className='btn btn-light me-4 rounded-pill px-4 py-2'
+                >
                   Get Quote
-                </button>
-                <button className='btn btn-outline-light rounded-pill px-4 py-2'>
+                </NavLink>
+                <NavLink
+                  to='/services'
+                  className='btn btn-outline-light rounded-pill px-4 py-2'
+                >
                   Our Services
-                </button>
+                </NavLink>
               </div>
             </div>
           </div>
         </div>
       </section>
+      <About />
+      <Services />
+      <Contacts />
     </div>
   )
 }

@@ -16,13 +16,13 @@ export default function Services() {
           </div>
           <div className='row mt-5'>
             <div className='col-md-4'>
-              <div class='card p-3'>
-                <div class='card-body text-center'>
+              <div className='card p-3'>
+                <div className='card-body text-center'>
                   <i className='fa fa-cogs fa-4x mb-4 text-primary'></i>
-                  <h5 class='card-title mb-3 fs-4 fw-bold'>
+                  <h5 className='card-title mb-3 fs-4 fw-bold'>
                     Highly Customizable
                   </h5>
-                  <p class='card-text lead'>
+                  <p className='card-text lead'>
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
@@ -30,13 +30,13 @@ export default function Services() {
               </div>
             </div>
             <div className='col-md-4'>
-              <div class='card p-3'>
-                <div class='card-body text-center'>
+              <div className='card p-3'>
+                <div className='card-body text-center'>
                   <i className='fa fa-mobile fa-4x mb-4 text-primary'></i>
-                  <h5 class='card-title mb-3 fs-4 fw-bold'>
+                  <h5 className='card-title mb-3 fs-4 fw-bold'>
                     Fully Responsive Layout
                   </h5>
-                  <p class='card-text lead'>
+                  <p className='card-text lead'>
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
@@ -44,11 +44,13 @@ export default function Services() {
               </div>
             </div>
             <div className='col-md-4'>
-              <div class='card p-3'>
-                <div class='card-body text-center'>
+              <div className='card p-3'>
+                <div className='card-body text-center'>
                   <i className='fa fa-user fa-4x mb-4 text-primary'></i>
-                  <h5 class='card-title mb-3 fs-4 fw-bold'>User Experience</h5>
-                  <p class='card-text lead'>
+                  <h5 className='card-title mb-3 fs-4 fw-bold'>
+                    User Experience
+                  </h5>
+                  <p className='card-text lead'>
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
@@ -58,13 +60,13 @@ export default function Services() {
           </div>
           <div className='row mt-5'>
             <div className='col-md-4'>
-              <div class='card p-3'>
-                <div class='card-body text-center'>
+              <div className='card p-3'>
+                <div className='card-body text-center'>
                   <i className='fa fa-laptop fa-4x mb-4 text-primary'></i>
-                  <h5 class='card-title mb-3 fs-4 fw-bold'>
+                  <h5 className='card-title mb-3 fs-4 fw-bold'>
                     Creative Web Design
                   </h5>
-                  <p class='card-text lead'>
+                  <p className='card-text lead'>
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
@@ -72,11 +74,13 @@ export default function Services() {
               </div>
             </div>
             <div className='col-md-4'>
-              <div class='card p-3'>
-                <div class='card-body text-center'>
+              <div className='card p-3'>
+                <div className='card-body text-center'>
                   <i className='fa fa-file-code-o fa-4x mb-4 text-primary'></i>
-                  <h5 class='card-title mb-3 fs-4 fw-bold'>Unique and Clean</h5>
-                  <p class='card-text lead'>
+                  <h5 className='card-title mb-3 fs-4 fw-bold'>
+                    Unique and Clean
+                  </h5>
+                  <p className='card-text lead'>
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
@@ -84,11 +88,13 @@ export default function Services() {
               </div>
             </div>
             <div className='col-md-4'>
-              <div class='card p-3'>
-                <div class='card-body text-center'>
+              <div className='card p-3'>
+                <div className='card-body text-center'>
                   <i className='fa fa-star-half-o fa-4x mb-4 text-primary'></i>
-                  <h5 class='card-title mb-3 fs-4 fw-bold'>Creative Ideas</h5>
-                  <p class='card-text lead'>
+                  <h5 className='card-title mb-3 fs-4 fw-bold'>
+                    Creative Ideas
+                  </h5>
+                  <p className='card-text lead'>
                     Some quick example text to build on the card title and make
                     up the bulk of the card's content.
                   </p>
