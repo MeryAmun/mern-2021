@@ -21,7 +21,7 @@ export default function Contacts() {
             <div className='col-md-6'>
               <form action=''>
                 <div className='mb-3'>
-                  <label for='name' className='form-label'>
+                  <label htmlFor='name' className='form-label'>
                     Your Name
                   </label>
                   <input
@@ -32,7 +32,10 @@ export default function Contacts() {
                   />
                 </div>
                 <div className='mb-3'>
-                  <label for='exampleFormControlInput1' className='form-label'>
+                  <label
+                    htmlFor='exampleFormControlInput1'
+                    className='form-label'
+                  >
                     Email address
                   </label>
                   <input
@@ -44,7 +47,7 @@ export default function Contacts() {
                 </div>
                 <div className='mb-3'>
                   <label
-                    for='exampleFormControlTextarea1'
+                    htmlFor='exampleFormControlTextarea1'
                     className='form-label'
                   >
                     Your Message

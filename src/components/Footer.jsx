@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import React from 'react'
 
 export default function Footer() {
@@ -14,30 +15,30 @@ export default function Footer() {
                 <h5>section</h5>
                 <ul className='nav flex-column'>
                   <li className='nav-item mb-2'>
-                    <a href='#' className='nav-link p-0 text-white'>
+                    <Link to='/' className='nav-link p-0 text-white'>
                       Home
-                    </a>
+                    </Link>
                   </li>
 
                   <li className='nav-item mb-2'>
-                    <a href='#' className='nav-link p-0 text-white'>
+                    <Link to='/' className='nav-link p-0 text-white'>
                       Features
-                    </a>
+                    </Link>
                   </li>
                   <li className='nav-item mb-2'>
-                    <a href='#' className='nav-link p-0 text-white'>
+                    <Link to='/' className='nav-link p-0 text-white'>
                       Pricing
-                    </a>
+                    </Link>
                   </li>
                   <li className='nav-item mb-2'>
-                    <a href='#' className='nav-link p-0 text-white'>
+                    <Link to='/' className='nav-link p-0 text-white'>
                       FAQs
-                    </a>
+                    </Link>
                   </li>
                   <li className='nav-item mb-2'>
-                    <a href='#' className='nav-link p-0 text-white'>
+                    <Link to='/' className='nav-link p-0 text-white'>
                       About
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -45,30 +46,30 @@ export default function Footer() {
                 <h5>section</h5>
                 <ul className='nav flex-column'>
                   <li className='nav-item mb-2'>
-                    <a href='#' className='nav-link p-0 text-white'>
+                    <Link to='/' className='nav-link p-0 text-white'>
                       Home
-                    </a>
+                    </Link>
                   </li>
 
                   <li className='nav-item mb-2'>
-                    <a href='#' className='nav-link p-0 text-white'>
+                    <Link to='/' className='nav-link p-0 text-white'>
                       Features
-                    </a>
+                    </Link>
                   </li>
                   <li className='nav-item mb-2'>
-                    <a href='#' className='nav-link p-0 text-white'>
+                    <Link to='/' className='nav-link p-0 text-white'>
                       Pricing
-                    </a>
+                    </Link>
                   </li>
                   <li className='nav-item mb-2'>
-                    <a href='#' className='nav-link p-0 text-white'>
+                    <Link to='/' className='nav-link p-0 text-white'>
                       FAQs
-                    </a>
+                    </Link>
                   </li>
                   <li className='nav-item mb-2'>
-                    <a href='#' className='nav-link p-0 text-white'>
+                    <Link to='/' className='nav-link p-0 text-white'>
                       About
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -97,19 +98,19 @@ export default function Footer() {
                 <p>&copy; 2021 Company, Inc.All rights reserved,</p>
                 <ul className='list-unstyled d-flex'>
                   <li className='ms-3'>
-                    <a href='#' className='link-light'>
+                    <Link to='/' className='link-light'>
                       <i className='fa fa-facebook fa-2x'></i>
-                    </a>
+                    </Link>
                   </li>
                   <li className='ms-3'>
-                    <a href='#' className='link-light'>
+                    <Link to='/' className='link-light'>
                       <i className='fa fa-instagram fa-2x'></i>
-                    </a>
+                    </Link>
                   </li>
                   <li className='ms-3'>
-                    <a href='#' className='link-light'>
+                    <Link to='/' className='link-light'>
                       <i className='fa fa-twitter fa-2x'></i>
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>

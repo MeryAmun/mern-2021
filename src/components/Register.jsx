@@ -1,7 +1,52 @@
+import React, { useState } from 'react'
+
 import { NavLink } from 'react-router-dom'
-import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function Register() {
+  const history = useNavigate()
+  const [user, setUser] = useState({
+    username: '',
+    email: '',
+    password: '',
+  })
+
+  //handle change
+  const handleInput = (e) => {
+    let name = e.target.name
+    let value = e.target.value
+    setUser({ ...user, [name]: value })
+  }
+
+  //handle submit
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const { username, email, password } = user
+    console.log(user)
+    try {
+      const res = await fetch('http://localhost:3001/users/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username,
+          email,
+          password,
+        }),
+      })
+
+      if (res.status === 400 || !res) {
+        return res.status(400).json({
+          message: 'Registration failed check credentials',
+        })
+      } else {
+        history('/login')
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
   return (
     <div>
       <div className='container shadow my-5'>
@@ -19,50 +64,62 @@ export default function Register() {
           </div>
           <div className='col-md-6 p-5'>
             <h1 className='display-6 fw-bolder mb-5'>Register</h1>
-            <form>
-              <div class='mb-3'>
-                <label for='name' class='form-label'>
+            <form onSubmit={handleSubmit} method='POST'>
+              <div className='mb-3'>
+                <label htmlFor='name' className='form-label'>
                   Username
                 </label>
-                <input type='email' class='form-control' id='name' />
+                <input
+                  type='text'
+                  className='form-control'
+                  id='username'
+                  name='username'
+                  value={user.username}
+                  onChange={handleInput}
+                />
               </div>
-              <div class='mb-3'>
-                <label for='exampleInputEmail1' class='form-label'>
+              <div className='mb-3'>
+                <label htmlFor='exampleInputEmail1' className='form-label'>
                   Email address
                 </label>
                 <input
                   type='email'
-                  class='form-control'
+                  className='form-control'
                   id='exampleInputEmail1'
-                  aria-describedby='emailHelp'
+                  name='email'
+                  value={user.email}
+                  onChange={handleInput}
                 />
-                <div id='emailHelp' class='form-text'>
+                <div id='emailHelp' className='form-text'>
                   We'll never share your email with anyone else.
                 </div>
               </div>
-              <div class='mb-3'>
-                <label for='exampleInputPassword1' class='form-label'>
+              <div className='mb-3'>
+                <label htmlFor='exampleInputPassword1' className='form-label'>
                   Password
                 </label>
                 <input
                   type='password'
-                  class='form-control'
-                  id='exampleInputPassword1'
+                  className='form-control'
+                  id='password'
+                  name='password'
+                  value={user.password}
+                  onChange={handleInput}
                 />
               </div>
-              <div class='mb-3 form-check'>
+              <div className='mb-3 form-check'>
                 <input
                   type='checkbox'
-                  class='form-check-input'
+                  className='form-check-input'
                   id='exampleCheck1'
                 />
-                <label class='form-check-label' for='exampleCheck1'>
+                <label className='form-check-label' htmlFor='exampleCheck1'>
                   I Agree to Terms and Conditions
                 </label>
               </div>
               <button
                 type='submit'
-                class='btn btn-outline-primary w-100 mt-4 rounded-pill'
+                className='btn btn-outline-primary w-100 mt-4 rounded-pill'
               >
                 Register
               </button>
