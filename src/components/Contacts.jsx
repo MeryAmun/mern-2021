@@ -1,6 +1,49 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function Contacts() {
+  const [msg, setMsg] = useState({
+    name: '',
+    email: '',
+    message: '',
+  })
+
+  const handleChange = (e) => {
+    let name = e.target.name
+    let value = e.target.value
+    setMsg({ ...msg, [name]: value })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const { name, email, message } = msg
+    try {
+      const res = await fetch('http://localhost:3001/message', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+        }),
+      })
+
+      if (res.status === 400 || !res) {
+        window.alert('Registration failed check credentials')
+      } else {
+        window.alert('message sent')
+        setMsg({
+          name: '',
+          email: '',
+          message: '',
+        })
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <div>
       <section id='contact'>
@@ -19,7 +62,7 @@ export default function Contacts() {
               <img src='/assets/contact.jpg' alt='contact' className='w-75' />
             </div>
             <div className='col-md-6'>
-              <form action=''>
+              <form onSubmit={handleSubmit} action='POST'>
                 <div className='mb-3'>
                   <label htmlFor='name' className='form-label'>
                     Your Name
@@ -27,8 +70,11 @@ export default function Contacts() {
                   <input
                     type='text'
                     className='form-control'
-                    id='name'
                     placeholder='Ngwa Suh'
+                    id='name'
+                    name='name'
+                    value={msg.name}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className='mb-3'>
@@ -41,8 +87,11 @@ export default function Contacts() {
                   <input
                     type='email'
                     className='form-control'
-                    id='exampleFormControlInput1'
                     placeholder=''
+                    id='email'
+                    name='email'
+                    value={msg.email}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className='mb-3'>
@@ -50,16 +99,19 @@ export default function Contacts() {
                     htmlFor='exampleFormControlTextarea1'
                     className='form-label'
                   >
-                    Your Message
+                    Your message
                   </label>
                   <textarea
                     className='form-control'
-                    id='exampleFormControlTextarea1'
+                    id='message'
+                    name='message'
+                    value={msg.message}
+                    onChange={handleChange}
                     rows='5'
                   ></textarea>
                 </div>
                 <button className='btn btn-outline-primary rounded-pill px-4'>
-                  Send Message
+                  Send msg
                   <i className='fa fa-paper-plane ms-2'></i>
                 </button>
               </form>
