@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
 import { NavLink } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 export default function Login() {
-  const history = useNavigate()
+  const history = useHistory()
 
   const [user, setUser] = useState({
     email: '',

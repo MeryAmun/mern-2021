@@ -1,6 +1,7 @@
 import './App.css'
 
-import { Route, Routes } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Route, Switch } from 'react-router-dom'
 
 import About from './components/About'
 import Contacts from './components/Contacts'
@@ -10,24 +11,67 @@ import Home from './components/Home'
 import Login from './components/Login'
 import Logout from './components/Logout'
 import Navbar from './components/Navbar'
-import React from 'react'
+import ProtectedRoute from './components/ProtectedRoutes'
 import Register from './components/Register'
 import Services from './components/Services'
 
 function App() {
+  const [auth, setAuth] = useState(false)
+  const [auth1, setAuth1] = useState(true)
+
+  const isLoggedIn = async () => {
+    try {
+      const res = await fetch('/auth', {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'Application/json',
+        },
+        credentials: 'include',
+      })
+      if (res.status === 200) {
+        setAuth(true)
+        setAuth(false)
+      }
+      if (res.status === 401) {
+        setAuth(false)
+        setAuth(true)
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  useEffect(() => {
+    isLoggedIn()
+  })
+
   return (
     <>
       <Navbar />
-      <Routes>
-        <Route exact path='/' element={<Home />} />
-        <Route exact path='/about' element={<About />} />
-        <Route exact path='/services' element={<Services />} />
-        <Route exact path='/contact' element={<Contacts />} />
-        <Route exact path='/login' element={<Login />} />
-        <Route exact path='/register' element={<Register />} />
-        <Route exact path='/dashboard' element={<Dashboard />} />
-        <Route exact path='/logout' element={<Logout />} />
-      </Routes>
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/about' component={About} />
+        <Route exact path='/services' component={Services} />
+        <Route exact path='/contact' component={Contacts} />
+        <ProtectedRoute exact path='/login' component={Login} auth={false} />
+
+        <ProtectedRoute
+          exact
+          path='/register'
+          component={Register}
+          auth={false}
+        />
+
+        <ProtectedRoute
+          exact
+          path='/dashboard'
+          component={Dashboard}
+          auth={false}
+        />
+
+        <ProtectedRoute exact path='/logout' component={Logout} auth={false} />
+      </Switch>
       <Footer />
     </>
   )

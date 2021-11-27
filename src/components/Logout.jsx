@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 
-import { useNavigate } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 export default function Logout() {
-  const history = useNavigate()
+  const history = useHistory()
   const logout = async () => {
     try {
       const res = await fetch('http://localhost:3001/users/logout', {
