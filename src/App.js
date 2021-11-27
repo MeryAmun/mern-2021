@@ -8,6 +8,7 @@ import Dashboard from './components/Dashboard'
 import Footer from './components/Footer'
 import Home from './components/Home'
 import Login from './components/Login'
+import Logout from './components/Logout'
 import Navbar from './components/Navbar'
 import React from 'react'
 import Register from './components/Register'
@@ -25,6 +26,7 @@ function App() {
         <Route exact path='/login' element={<Login />} />
         <Route exact path='/register' element={<Register />} />
         <Route exact path='/dashboard' element={<Dashboard />} />
+        <Route exact path='/logout' element={<Logout />} />
       </Routes>
       <Footer />
     </>
