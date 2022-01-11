@@ -24,7 +24,7 @@ export default function Register() {
     const { username, email, password } = user
     console.log(user)
     try {
-      const res = await fetch('http://localhost:3001/users/register', {
+      const res = await fetch('/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ export default function Register() {
           message: 'Registration failed check credentials',
         })
       } else {
-        history('/login')
+        history.push('/login')
       }
     } catch (error) {
       console.log(error)

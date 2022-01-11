@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import React from 'react'
 
 export default function About() {
@@ -27,9 +28,12 @@ export default function About() {
               <button className='btn btn-primary rounded-pill px-4 py-2'>
                 Get Started
               </button>
-              <button className='btn btn-outline-primary rounded-pill px-4 py-2 ms-2'>
-                Contact Us
-              </button>
+              <NavLink
+                to='/contact'
+                className='btn btn-primary rounded-pill px-4 py-2 mx-2'
+              >
+                Our Services
+              </NavLink>
             </div>
           </div>
         </div>
