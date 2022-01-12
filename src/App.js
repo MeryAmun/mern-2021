@@ -21,7 +21,7 @@ function App() {
 
   const isLoggedIn = async () => {
     try {
-      const res = await fetch('http://localhost:3001/users/auth', {
+      const res = await fetch('/auth', {
         method: 'GET',
         headers: {
           Accept: 'application/json',

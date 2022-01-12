@@ -35,7 +35,7 @@ export default function Login() {
         window.alert('Registration failed check credentials')
       } else {
         window.alert('logged in')
-        history.push('/')
+        history.push('/dashboard')
       }
     } catch (error) {
       console.log(error)
