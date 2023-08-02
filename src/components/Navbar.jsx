@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import React from 'react'
 
-export default function Navbar() {
+export default function Navbar({auth}) {
   return (
     <div>
       <nav className='navbar navbar-expand-lg navbar-light shadow'>
@@ -40,9 +40,9 @@ export default function Navbar() {
                 </NavLink>
               </li>
             </ul>
-            <NavLink to='/' className='navbar-brand fw-bolder fs-4 mx-auto'>
+            {/* <NavLink to='/' className='navbar-brand fw-bolder fs-4 mx-auto'>
               Navbar
-            </NavLink>
+            </NavLink> */}
             <NavLink
               to='/login'
               className='btn btn-outline-primary ms-auto px-4 rounded-pill'
@@ -50,14 +50,10 @@ export default function Navbar() {
               <i className='fa fa-sign-in me-2'></i>
               Login
             </NavLink>
-            <NavLink
-              to='/register'
-              className='btn btn-outline-primary ms-2 px-4 rounded-pill'
-            >
-              <i className='fa fa-user-plus me-2'></i>
-              Register
-            </NavLink>
-            <NavLink
+           {
+            auth && (
+              <>
+              <NavLink
               to='/dashboard'
               className='btn btn-outline-primary ms-2 px-4 rounded-pill'
             >
@@ -71,6 +67,9 @@ export default function Navbar() {
               <i className='fa fa-sign-out me-2'></i>
               Logout
             </NavLink>
+              </>
+            )
+           }
           </div>
         </div>
       </nav>

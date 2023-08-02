@@ -41,7 +41,7 @@ export default function Register() {
           message: 'Registration failed check credentials',
         })
       } else {
-        history('/login')
+        history.push('/login')
       }
     } catch (error) {
       console.log(error)
