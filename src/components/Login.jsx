@@ -20,7 +20,7 @@ export default function Login() {
     e.preventDefault()
     const { email, password } = user
     try {
-      const res = await fetch('http://localhost:3001/users/login', {
+      const res = await fetch('/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ export default function Login() {
         window.alert('Registration failed check credentials')
       } else {
         window.alert('logged in')
-        history.push('/')
+        history.push('/dashboard')
       }
     } catch (error) {
       console.log(error)

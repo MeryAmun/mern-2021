@@ -6,7 +6,7 @@ export default function Logout() {
   const history = useHistory()
   const logout = async () => {
     try {
-      const res = await fetch('http://localhost:3001/users/logout', {
+      const res = await fetch('/logout', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
